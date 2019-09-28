@@ -16,6 +16,14 @@ https://gitbitex.com:8080/trade/BTC-USDT
 `webpack`
 
 ## Install
+### Server
+* git clone https://github.com/gitbitex/gitbitex-spot.git
+* Create database and make sure **BINLOG[ROW format]** enabled
+* Execute ddl.sql
+* Modify conf.json
+* Run go build
+* Run ./gitbitex-spot
+### Web
 * git clone https://github.com/gitbitex/gitbitex-web.git
 * Run `npm install`
 * Run `npm start`
