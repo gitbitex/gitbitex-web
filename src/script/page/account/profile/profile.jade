@@ -1,0 +1,32 @@
+div.page.page-account.page-account-profile
+    header-navbar
+    div.account-container
+        h1 MY PROFILE
+        div.content
+            div.block-inline
+                ul.col-sm-6
+                    li.col-xs-8
+                        span.avatar
+                            img(:src='account.avatar')
+                        b Change Picture
+                        | Max file size is 20Mb. 
+                    li.col-xs-4.text-right
+                        button Upload
+                            input.avatar-input(type="file", @change='upload', ref='file')
+                ul.col-sm-6
+                    li.col-xs-8
+                        b Change Password
+                        | Enable 2-factor authentication 
+                    li.col-xs-4.text-right
+                        button(@click='changePassword') Change
+            div.block
+                ul
+                    li.col-sm-6
+                        b Nick Name
+                        | This name will be part of your public profile.
+                    li.col-sm-6
+                        div.input-btn
+                            input.form-control.input-lg(v-model='account.nickname')
+                            button(@click='updateNickname') Save
+                        
+    

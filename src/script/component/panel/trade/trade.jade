@@ -1,0 +1,11 @@
+div.panel-trade
+    div.group(v-for='(products, key) in groups')
+        h4 {{key}}
+        link-proxy.item(v-for='product in products', :to="'/trade/'+product.id", :key='product.id')
+            span {{product.baseCurrency}}/{{product.quoteCurrency}}
+            span {{parseFloat(product.price).toFixed(product.quoteScale)}}
+                small   {{product.quoteCurrency}}
+            span(:class="{'text-color-red': product.rate24h < 0, 'text-color-green': product.rate24h >= 0}")
+                | {{product.rate24h>0?'+':''}}{{product.rate24h}} 
+                small %
+        

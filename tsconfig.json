@@ -1,0 +1,32 @@
+{
+    "compilerOptions": {
+        "experimentalDecorators": true,
+        "outDir": "./build/",
+        "sourceMap": true,
+        "noImplicitAny": true,
+        "module": "commonjs",
+        "target": "es5",
+        "jsx": "react",
+        "allowSyntheticDefaultImports": true,
+        "typeRoots": [
+            "node_modules/@types"
+        ],
+        "plugins": [
+            {
+                "name": "typescript-lit-html-plugin"
+            }
+        ],
+        "lib": [
+            "es2015.promise",
+            "es2015",
+            "dom"
+        ]
+    },
+    "exclude": [
+        "node_modules/lodash.foreach"
+    ],
+    "include": [
+        "src/script/**/*.ts",
+        "src/script/**/*.jade"
+    ]
+}

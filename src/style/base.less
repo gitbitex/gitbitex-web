@@ -1,0 +1,173 @@
+@font-face {
+    font-family: 'BaseFont';
+    src: url('../font/opensans-regular-webfont.woff2') format('woff2');
+    font-weight: normal;
+}
+@font-face
+{
+    font-family: 'BaseFont';
+    src: url('../font/opensans-bold-webfont.woff2') format('woff2');
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: 'AtlasTypewriter';
+    src: url('../font/AtlasTypewriter-Bold-Web.woff2') format('woff2');
+    font-weight: Bold;
+}
+
+@font-face {
+    font-family: 'AtlasTypewriter';
+    src: url('../font/AtlasTypewriter-Regular-Web.woff2') format('woff2');
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'AtlasTypewriter';
+    src: url('../font/AtlasTypewriter-Medium-Web.woff2') format('woff2');
+    font-weight: 500;
+}
+
+
+a {
+    color: #15232c;
+    text-decoration: none;
+    &:hover {
+        text-decoration: none;
+    }
+}
+html,
+body {
+
+    font-family: "Avenir Next", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    color: #15232c;
+    margin: 0;
+    height: 100%;
+
+}
+
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track-piece:vertical {
+    background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb:vertical {
+    background: #3a444d;
+    min-height: 150px;
+    min-width: 150px;
+}
+
+::-webkit-scrollbar-thumb:vertical:hover {
+    background: #555555
+}
+
+.clear-fixed {
+    clear: both;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+.m-t-0  {margin-top: 0px!important;}
+.m-t-10 {margin-top: 10px!important;}
+.m-t-20 {margin-top: 20px!important;}
+.m-t-30 {margin-top: 30px!important;}
+.m-t-40 {margin-top: 40px!important;}
+
+.m-r-0  {margin-right: 0px!important;}
+.m-r-5  {margin-right: 5px!important;}
+.m-r-10 {margin-right: 10px!important;}
+.m-r-20 {margin-right: 20px!important;}
+.m-r-30 {margin-right: 30px!important;}
+.m-r-40 {margin-right: 40px!important;}
+
+
+.clear-fixed {
+    clear: both;
+    &::after {
+        content: ".";
+        display: block;
+        height: 0;
+        clear: both;
+        visibility: hidden;
+    }      
+}
+
+.text-left {
+    text-align: left;
+}
+.text-center {
+    text-align: center;
+}
+.text-right {
+    text-align: right;
+}
+
+.text-color-green {
+    color: rgb(36, 156, 41);
+}
+
+.text-color-red {
+    color: rgb(239, 79, 27);
+}
+
+.text-color-green-dark {
+    color: #76FB53;
+}
+
+.text-color-red-dark {
+    color: #EC4E2C;
+}
+
+.form-control {
+
+    box-shadow: 0 1px 0 0 rgba(0,0,0,.02) inset;
+    border-color: #ddd;
+    width: 100%;
+    color: #555;
+    vertical-align: text-top;
+    border-radius: 2px;
+
+}
+
+.btn {
+
+    border-radius: 2px;
+    outline: none;
+    &:focus {
+        outline: none!important;
+    }
+
+}
+
+#App {
+    height: 100%;
+}
+.page {
+    height: 100%;
+}
+.page > .page-container {
+    padding: 0;
+    height: 100%;
+}
+
+.logo {
+
+    display: inline-block;
+    background: url(../image/logo.svg) no-repeat center; 
+    background-size: contain;
+    &.logo-light {
+        background-image: url(../image/logo-light.svg?2018);   
+    }
+
+}

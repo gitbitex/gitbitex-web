@@ -1,0 +1,68 @@
+div.form-order
+
+    h2 ORDER FORM
+
+    div.login(v-if='!logined')
+        button(@click='toSigninPage') Sign in
+        span.divider or
+        button(@click='toSignupPage') create account
+    div.balance(v-else)
+        h3 BALANCE
+        div.row.funds
+            div.col-xs-3 {{object.product.quoteCurrency}}
+            div.col-xs-9.text-right 
+                b {{quoteBalance}}
+                br 
+                i HOLD {{quoteHold}}
+            div.col-xs-3 {{object.product.baseCurrency}}
+            div.col-xs-9.text-right 
+                b {{baseBalance}}
+                br 
+                i HOLD {{baseHold}}
+        div.btns
+            button(@click='deposit')
+                icon-transaction
+                | DEPOSIT
+            button(@click='withdrawal')
+                icon-transaction 
+                | WITHDRAWAL
+    div.trade-form
+        div.group-btns
+            span(:class='{active: trade.side==0}', @click='tradeSideChange(0)') BUY
+            span(:class='{active: trade.side==1}', @click='tradeSideChange(1)') SELL
+        div.trade-tabbar
+            span(:class='{active: trade.type==0}', @click='tradeTypeChange(0)') MARKET
+            span(:class='{active: trade.type==1}', @click='tradeTypeChange(1)') LIMIT
+        div.input-group(v-show='trade.side==1 || (trade.side==0 && trade.type==1)')
+            label Amount
+            input.form-control(type="number", placeholder="0.00", min="0", autocomplete="off",
+                v-model.number='trade.size')
+            span.input-group-btn {{object.product.baseCurrency}}
+        div.input-group(v-show='trade.side==0 && trade.type==0')
+            label Amount
+            input.form-control(type="number", placeholder="0.00",  min="0", autocomplete="off",
+                v-model.number='trade.quote')
+            span.input-group-btn {{object.product.quoteCurrency}}
+        div.input-group(v-show='trade.type==1')
+            label Limit Price
+            input.form-control(type="number", placeholder="0.00",  min="0", autocomplete="off",
+                v-model.number='trade.price')
+            span.input-group-btn {{object.product.quoteCurrency}}
+        div.preview
+            div.row(v-show='!(trade.side==0 && trade.type==0)')
+                span.col-xs-6 Total ({{object.product.quoteCurrency}}) ≈
+                span.col-xs-6.text-right {{format.quote}}
+            div.row(v-show='trade.side==0 && trade.type==0')
+                span.col-xs-6 Total ({{object.product.baseCurrency}}) ≈
+                span.col-xs-6.text-right {{format.size}}
+
+        div.submit  
+            button.buy(@click='submit', v-show='trade.side==0 && !status') PLACE BUY ORDER 
+            button.sell(@click='submit', v-show='trade.side==1 && !status') PLACE SELL ORDER 
+            button.success(v-show='status == 1', disabled) ✓SUCCESS
+            button.error(v-show='status == 2') ERROR
+        
+        div.submit-error(v-if='error') {{error}}
+
+
+        

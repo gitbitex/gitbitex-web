@@ -1,0 +1,11 @@
+div.modal-deposit
+    div.modal-header
+        h2 DEPOSIT FUNDS
+        span.close(@click='close') ✕
+    div.tabbar
+        span(v-for='(item, index) in tabbarItems', @click='tabbarChange(index)', :class='{active: item.active}') 
+            | {{item.currency}} Address
+    div.modal-body
+        form-deposit(:currency='currency')
+
+  

@@ -1,0 +1,43 @@
+div.header.header-trade
+    logo(@click.native='toHome')
+    div.market-info-wrapper
+        li
+            div.product-selector-btn(
+                @mouseover="productSelectorHide(false)" 
+                @mouseout="productSelectorHide(true)")
+                | {{product.baseCurrency}}/{{product.quoteCurrency}}
+                span.arrow
+                span.description 
+            div.product-selector-panel(
+                v-show='productSelectorShowing', 
+                @mouseover="productSelectorHide(false)" 
+                @mouseout="productSelectorHide(true)")
+                panel-trade(:groups='productGroups')
+        li
+            div.product-last-price
+                | {{parseFloat(product.price).toFixed(product.quoteScale)}} {{product.quoteCurrency}}
+                span.description Last trade price
+            div.product-last-price
+                span(:class="{'text-color-red': product.rate24h < 0, 'text-color-green': product.rate24h >= 0}")
+                    | {{product.rate24h}} %
+                span.description 24h price
+            div.product-last-price
+                | {{product.volume24h}} {{product.baseCurrency}}
+                span.description 24h volume
+    div.navbar
+        li(v-if='!logined')
+            a(@click='toSign') Sign in
+        li.user(@click.stop='dropdownToggle', v-if='logined')
+            a {{userInfo.nickname}}
+            span.avatar
+                img(:src='userInfo.avatar')
+            span.arrow
+        div.dropdown-panel(:class='{active: showDropdown}')
+            span.group
+                router-link(to='/account/wallet') My Wallets
+                router-link(to='/account/order') My Orders
+            span.group
+                router-link(to='/account/profile') My Profile
+                a(@click='signOut') Sign out
+
+        

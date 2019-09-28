@@ -1,0 +1,46 @@
+div.panel.panel-order-book
+    h2 ORDER BOOK
+        span.pannel-tabbar
+            a.active Order Book
+            a(@click='switchHistory') Trade History
+    div.col-name.flex
+        span &nbsp;
+        span.text-right Market Size
+        span Price ({{object.product.quoteCurrency}})
+    div.book-list(ref='book')
+        div.asks
+            li.flex(v-for='ask in orderBook.asks', :class="ask[3]", @click='selectAction(0, ask)')
+                span 
+                    em(:style="{ width: ask[2] +'%'}")
+                span
+                    format-number(:num='ask[1]', v-if='ask[1]', :fixed='object.product.baseScale')
+                    i(v-else) -
+                span
+                    format-price(:price='ask[0]', v-if='ask[0]', type=1, :fixed='object.product.quoteScale')
+                    i(v-else) -
+        div.col-name.flex
+            span &nbsp;
+            span {{object.product.baseCurrency}} Spread
+            span {{tradePriceDiff}}
+        div.bids
+            li.flex(v-for='bid in orderBook.bids', :class="bid[3]", @click='selectAction(1, bid)')
+                span 
+                    em(:style="{ width: bid[2] +'%'}")
+                span 
+                    format-number(:num='bid[1]', v-if='bid[1]', :fixed='object.product.baseScale')
+                    i(v-else) -
+                span 
+                    format-price(:price='bid[0]', v-if='bid[0]', type=1, :fixed='object.product.quoteScale')
+                    i(v-else) -
+    div.aggregation.flex
+        span 
+        span.text-right Aggregation
+        span
+            div.operation
+                button(@click='aggregationDown', :disabled='!scaleDownBtnEnable')
+                    icon-down
+                label {{parseFloat(priceScale).toFixed(object.product.quoteScale)}}
+                button(@click='aggregationUp', :disabled='!scaleUpBtnEnable')
+                    icon-up            
+        
+

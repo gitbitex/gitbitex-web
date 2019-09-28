@@ -1,0 +1,10 @@
+div.page.page-account.page-account-order
+    header-navbar(active=1)
+    div.account-container
+        h1 MY ORDERS
+            v-select.select-lg(:options="products", :search='true', v-model="selected")
+        div.content
+            panel-order-list(:orders='orders', :product='product', theme='light', :loading='loading')
+        div.pagination-wrapper(v-show='!loading')
+            div.pagination-inner
+                pagination(v-model='cursorDirection', count=10000)

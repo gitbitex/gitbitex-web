@@ -1,0 +1,15 @@
+div.form-withdrawal
+    div.control-group
+        label DESTINATION
+        input.form-control.input-lg(:placeholder="this.currency+' address'", v-model='transfer.address')
+    div.control-group
+        label AMOUNT
+        input.form-control.input-lg(placeholder="0.00", v-model='transfer.amount')
+        span.currency {{this.currency}}
+    p Enter a {{this.currency}} address and the amount you wish to transfer from you trading account.
+    div.footer
+        p.error {{error}}
+        button.btn.btn-primary.btn-block.btn-lg(@click='submit', :disabled='loading') Withdrawal funds
+            
+
+  

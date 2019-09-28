@@ -1,0 +1,11 @@
+div.panel-wallet.cover()
+    img.brand(:src='wallet.currencyIcon')
+    span.name {{wallet.currency}} Wallet
+    span.balance {{wallet.available}} {{wallet.currency}} ≈ 
+    span.btns
+        button(@click.stop='send(wallet.currency)')
+            icon-send
+            | Send
+        button(@click.stop='receive(wallet.currency)')
+            icon-qrcode
+            | Receive

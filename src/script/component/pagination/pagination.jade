@@ -1,0 +1,5 @@
+div.pagination
+    li.prev(:class='{disabled: this.page == 1}', @click='prev')
+        icon-arrow
+    li.next(:class='{disabled: this.page == count}', @click='next')
+        icon-arrow

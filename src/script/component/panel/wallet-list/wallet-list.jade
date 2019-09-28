@@ -1,0 +1,14 @@
+div.panel-wallet
+    li(v-for='f in funds', :class='{active: f.currency == selectedWallet.currency}', @click='select(f)')
+        div.left
+            img(:src='f.currencyIcon')
+        div.right
+            span.name {{f.currency}} Wallet
+            span.balance {{f.available}} {{f.currency}} ≈ 
+            span.btns
+                button(@click.stop='send(f.currency)')
+                    icon-send
+                    | Send
+                button(@click.stop='receive(f.currency)')
+                    icon-qrcode
+                    | Receive

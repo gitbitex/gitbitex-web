@@ -1,0 +1,14 @@
+div.chart.panel.chart-depth
+    div.aggregation
+        div.operation
+            button(@click='aggregationDown', :disabled='!scaleDownBtnEnable')
+                icon-down
+            span.price {{price}}
+            button(@click='aggregationUp', :disabled='!scaleUpBtnEnable')
+                icon-up
+        div.description Mid Market Price
+    
+    div.depth-container(ref='depth')
+    div.chart-loading(v-if='loading')
+        span.loading-spinner
+        

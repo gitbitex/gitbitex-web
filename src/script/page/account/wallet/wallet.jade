@@ -1,0 +1,14 @@
+div.page.page-account.page-account-wallet
+    header-navbar(active=0)
+    div.account-container
+        h1 MY WALLETS
+        div.content(:class="{'show-wallets': showWallets}")
+            div.cover
+                div.menu(@click='showWallets=true')
+                    icon-arrow
+                panel-wallet(:wallet='wallet', @send='withdrawal', @receive='deposit')
+            div.wallets
+                panel-wallet-list(:selected-wallet='wallet', 
+                    @send='withdrawal', @receive='deposit', @select='walletSelect')
+            div.transaction
+                panel-transaction(:currency='wallet.currency', @detail='transaction')

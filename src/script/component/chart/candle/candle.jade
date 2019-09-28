@@ -1,0 +1,16 @@
+div.chart.panel.chart-candle
+    div.chart-menu
+        v-select(:options='rangeNameOptions', v-model='rangeNameSelected')
+        v-select(:options='chartTypeOptions', v-model='chartTypeSelected')
+    div.chart-hover-point
+        div.inner(v-show='overPoint[1] > 0')
+            span T={{overPoint[0]}}
+            span O={{overPoint[1]}}
+            span H={{overPoint[2]}}
+            span L={{overPoint[3]}}
+            span C={{overPoint[4]}}
+            span V={{overPoint[5]}}
+    div.chart-container(ref='chart')
+    div.chart-loading(v-if='loading')
+        span.loading-spinner
+        

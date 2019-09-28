@@ -1,0 +1,7 @@
+div.page-alert
+    div.content
+        div.title {{title}}
+        div.text {{content}}
+        div.btns
+            button.cancel(@click='cancel', v-if='cancelText') {{cancelText}}
+            button.submit(@click='submit')  {{submitText}}

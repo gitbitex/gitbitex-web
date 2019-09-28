@@ -1,0 +1,460 @@
+.form {
+
+
+    &.form-inline {
+        .control-group {
+            label {
+                margin: 0;
+                height: 34px;
+                line-height: 34px;
+            }
+        }
+    }
+
+    .form-group {
+
+        .control-label {
+            font-weight: 400;
+            height: 34px;
+            margin: 0;
+            line-height: 34px;
+            text-align: right;
+        }
+
+        .error {
+            color: #EC4E2C;
+        }
+
+    }
+
+    .control-group {
+
+        padding: 7px 0px;
+        margin-bottom: 10px;
+        position: relative;
+
+        label {
+            font-size: 12px;
+            color: rgb(78, 92, 110);
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+        input {
+            color: rgb(78, 92, 110);
+            border-color: rgb(218, 225, 233);
+            box-shadow: none;
+            border-radius: 4px;
+            font-size: 15px;
+            font-weight: 500;
+            box-shadow: 0;
+            &:hover {
+                border-color: rgb(60, 144, 223);
+                transition: all 0.25s ease;
+            }
+        }
+    }
+
+}
+
+.form-order {
+
+    background: @darkBgBlackColor;
+
+    h2 {
+        height: 43px;
+        font-size: 14px;
+        color: #fff;
+        line-height: 43px;
+        padding: 0 10px;
+        background: #3a444d;
+        margin: 0;
+    }
+
+    .login {
+        padding: 30px 20px;
+        border-top: 1px solid #15232c;
+        background-color: #3d84d6;
+        color: #fff;
+        display: flex;
+        flex-direction: column;
+
+        button {
+            width: 100%;
+            padding: 10px 0;
+            border: 1px solid hsla(0,0%,100%,.4);
+            border-radius: 3px;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            background-color: transparent;
+            transition: all .3s ease;
+            color: #fff;
+            outline: none;
+            &:hover {
+                border-color: #fff;
+            }
+        }
+
+        span.divider {
+            position: relative;
+            display: inline-block;
+            padding: 10px 0;
+            text-align: center;
+            background-color: #3d84d6;
+            font-size: 12px;
+            font-weight: bold;
+            opacity: .8;
+        }
+    }
+
+    .balance {
+
+        padding: 10px 20px 20px 20px;
+        color: #Fff;
+        line-height: 30px;
+
+        h3 {
+            margin: 0;
+            font-size: 14px;
+        }
+
+        .funds {
+
+            font-size: 12px;
+            font-family: AtlasTypewriter;
+
+            i {
+                color: #999;
+                font-style: normal;
+                font-size: 10px;
+            }
+            
+
+        }
+
+        .row {
+            margin: 0 -3px;
+            .col-xs-3, .col-xs-9 {
+                padding: 5px 3px;
+                line-height: 16px;
+            }
+        }
+
+        .btns {
+
+            margin-top: 10px;
+            text-align: center;
+
+            button {
+                height: 32px;
+                line-height: 30px;
+                border: 1px solid #fff;
+                color: #fff;
+                background: transparent;
+                padding: 0 5px 0 5px;
+                border-radius: 2px;
+                font-size: 10px;
+                opacity: .7;
+                font-weight: bold;
+                display: inline-block;
+                outline: none;
+                width: e('calc(100%/2 - 5px)');
+
+                &:first-of-type {
+                    margin-right: 10px;
+                }
+                &:hover {
+                    opacity: 1;
+                }
+                .icon-transaction {
+                    width: 12px;
+                    height: 12px;
+                    margin: 0 5px 0 2px;
+                    vertical-align: middle;
+                }
+            }
+
+        }
+
+    }
+
+    .trade-form {
+
+        border-top: 1px solid #15232c;
+        border-bottom: 1px solid #15232c;
+        background: #3a444d;
+        padding: 20px;
+
+        .group-btns {
+
+            span {
+                width: 50%;
+                text-align: center;
+                color: #fff;
+                background: rgb(92, 101, 107);
+                border-radius: 0;
+                font-weight: bold;
+                font-size: 12px;
+                height: 25px;
+                line-height: 25px;
+                display: inline-block;
+                cursor: pointer;
+
+                &:hover {
+                    background: rgb(105, 113, 118);
+                }
+                &.active {
+                    &:first-of-type {
+                        background: rgb(68, 190, 36);
+                    }
+                    &:last-of-type {
+                        background: rgb(239, 79, 27);
+                    }
+                }
+            }
+
+        }
+
+        .trade-tabbar {
+            font-size: 12px;
+            font-weight: bold;
+            width: 100%;
+            display: flex;
+            margin-top: 10px;
+            margin-bottom: 20px;
+            span {
+                display: inline-block;
+                border-bottom: 2px solid #ffffff;
+                line-height: 28px;
+                padding: 0px 5px;
+                cursor: pointer;
+                opacity: .3;
+                color: #ffffff;
+                flex: 1;
+                text-align: center;
+
+                &.active {
+                    opacity: 1;
+                }
+            }
+    
+        }
+
+        .input-group {
+
+            width: 100%;
+            color: #fff;
+            height: 38px;
+            height: 60px;
+            clear: both;
+            margin-top: 10px;
+            input {
+                width: e('calc(100% - 60px)');
+                background: rgb(92, 101, 107);
+                float: left;
+                height: 38px;
+                border: 0;
+                border: 1px solid #15232c;
+                border-right: 0;
+                border-radius: 0;
+                text-align: right;
+                color: #fff;
+                font-weight: bold;
+                outline: none;
+                outline-width: 0;
+
+                &::input-placeholder,
+                &::-webkit-input-placeholder {
+                    font-weight: bold;
+                    color: #fff;
+                }
+            }
+
+            span {
+                width: 60px;
+                border: 1px solid #15232c;
+                box-sizing: border-box;
+                background: rgb(92, 101, 107);
+                float: right;
+                height: 38px;
+                line-height: 38px;
+                text-align: center;
+                font-weight: bold;
+                font-size: 12px;
+            }
+
+            label {
+                font-size: 12px;
+                height: 20px;
+                line-height: 20px;
+                display: block;
+                float: left;
+                width: 100%;
+                font-weight: 100;
+                margin: 0;
+            }
+
+        }
+
+        .preview {
+            color: #ffffff;
+            margin-top: 10px;
+            font-size: 12px;
+        }
+
+        .submit {
+
+            margin: 20px 0;
+
+            button {
+                height: 40px;
+                font-size: 12px;
+                font-weight: bold;
+                color: #fff;
+                border: 0;
+                width: 100%;
+                outline: none;
+
+                &.buy {
+                    background: rgb(68, 190, 36);
+                    &:hover {
+                        background: rgb(69, 163, 45);
+                    }
+                }
+                &.sell {
+                    background: rgb(239, 79, 27);
+                    &:hover {
+                        background: rgb(189, 64, 22);
+                    }
+                }
+                &.error {
+                    background: rgb(249, 115, 61);
+                }
+                &.success {
+                    background: rgba(102, 224, 71, 0.863);
+                }
+            }
+
+        }
+
+        .submit-error {
+
+            display: flex;
+            padding: 7px 15px;
+            background: rgb(249, 103, 45);
+            color: #fff;
+            overflow: hidden;
+            line-height: 20px;
+            max-height: 50px;
+            font-size: 12px;
+        }
+
+    }
+
+
+}
+
+.form-withdrawal {
+
+    font-family: "Avenir Next", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+
+    .control-group {
+
+        padding: 7px 0px;
+        margin-bottom: 10px;
+        position: relative;
+
+        label {
+            font-size: 12px;
+            color: rgb(78, 92, 110);
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+        span.currency {
+            font-size: 17px;
+            position: absolute;
+            margin-top: -34px;
+            margin-right: 10px;
+            font-weight: 500;
+            opacity: .6;
+            width: 40px;
+            text-align: right;
+            right: 5px;
+        }
+        input {
+            color: rgb(78, 92, 110);
+            border-color: rgb(218, 225, 233);
+            box-shadow: none;
+            border-radius: 4px;
+            font-size: 15px;
+            font-weight: 500;
+            &:hover {
+                border-color: rgb(60, 144, 223);
+                transition: all 0.25s ease;
+            }
+        }
+    }
+
+
+    p {
+        font-size: 11px;
+        opacity: .5;
+        padding-top: 10px;
+    }
+
+    .footer {
+        border-top: 1px solid #efefef;
+        .btn {
+            font-weight: bold;
+            font-size: 13px;
+        }
+        p {
+            height: 30px;
+            width: 100%;
+            margin: 0;
+            line-height: 30px;
+            color: #EC4E2C;
+            font-size: 12px;
+            padding-top: 0;
+            opacity: 1;
+            overflow: hidden;
+        }
+    }
+
+
+}
+
+.form-deposit {
+
+    padding-bottom: 30px;
+
+    .qrcode {
+
+        height: 200px;
+        padding: 20px 0 40px 0;
+        box-sizing: content-box;
+
+        img {
+            width: 200px;
+            height: 200px;
+            margin: auto;
+        }
+
+        canvas {
+            visibility: hidden;
+        }
+
+    }
+
+    .address-control {
+        border-color: rgb(218, 225, 233);
+        background: rgb(249, 251, 252);
+        padding: 16px;
+        box-shadow: none;
+        height: auto;
+        font-size: 18px;
+        color: rgb(78, 92, 110);
+        font-weight: 500;
+    }
+
+}

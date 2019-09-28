@@ -1,0 +1,288 @@
+.chart-trade-view {
+
+    height: 100%;
+    position: relative;
+    background: @darkBgBlackColor;
+
+    h2 {
+        height: 43px;
+        font-size: 14px;
+        color: #fff;
+        line-height: 43px;
+        padding: 0 10px;
+        margin: 0;
+    }
+
+    .chart-active {
+        display: block!important;
+    }
+
+    .kline {
+
+        height: e("calc(100% - 43px)");
+        padding: 0;
+        width: 100%;
+        display: none;
+    }
+
+    .depth {
+
+        height: e("calc(100% - 43px)");
+        padding: 0;
+        width: 100%;
+        display: none;
+
+    }
+
+    .chart-loading {
+
+        height: e("calc(100% - 43px)");
+        width: 100%;
+        position: absolute;
+        display: flex;
+        background: @darkBgBlackColor;
+        flex:1;
+        align-items:center;
+        justify-content:center;
+        top: 43px;
+        z-index: 4;
+    }
+
+}
+
+@keyframes chart-slider-move {
+	0% {
+        transform: translateX(0px);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+
+.chart-slider {
+
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    padding: 10px 0;
+
+    .slider-inner {
+        display: flex;
+        align-items: center;
+        animation: chart-slider-move 30s linear;
+        animation-iteration-count: infinite;
+        height: 100%;
+    }
+
+    .slide {
+        flex: 0 0 270px;
+        height: 80%;
+        padding: 12px 26px;
+        border-right: 1px solid rgb(38, 45, 52, .5);
+        line-height: 1.5;
+        font-size: 12px;
+        display: flex;
+
+        .left {
+            flex: 1;
+            margin-right: 20px;
+            label {
+                display: inline-block;
+                width: 50%;
+                font-weight: 300;
+                color: rgba(255, 255, 255, 0.4);
+            }
+            span {
+                display: inline-block;
+                width: 50%;
+                text-align: right;
+                color: rgb(14, 172, 52);
+                font-family: AtlasTypewriter;
+                &.red {
+                    color: rgb(249, 103, 45);
+                }
+            }
+            b {
+                display: block;
+                width: 100%;
+                font-size: 16px;
+                color: #fff;
+                font-weight: 300;
+                margin-top: 12px;
+                font-family: AtlasTypewriter;
+                small {
+                    font-size: 10px;
+                }
+            }
+
+        }
+
+        .right {
+            display: flex;
+            align-items: center;
+            flex: 0 0 60px;
+            img {
+                width: 60px;
+                height: 30px;
+            }
+        }
+
+        
+    }
+
+}
+
+.chart-candle {
+
+    height: 100%;
+
+    .chart-menu {
+        height: 32px;
+        border-bottom: 1px solid @darkBlackColor;
+        border-top: 1px solid @darkBlackColor;
+        background: @darkBgBlackColor;
+        display: flex;
+        align-items: center;
+        .v-select {
+            min-width: 80px;
+            height: 30px;
+            .value {
+                border: 0;
+                border-right: 1px solid @darkBlackColor;
+                border-radius: 0;
+                input {
+                    background: @darkBgBlackColor;
+                    color: rgba(255, 255, 255, .8);
+                }
+                .arrow {
+                    &::before {
+                        background: rgba(255, 255, 255, .8);
+                    }
+                    &::after {
+                        background: rgba(255, 255, 255, .8);
+                    }
+                }
+            }
+            .select-dropdown {
+                border: 1px solid @darkBlackColor;
+                background: @darkBgBlackColor;
+                color: rgba(255, 255, 255, .8);
+                margin-top: 0;
+                span {
+                    height: 30px;
+                    line-height: 30px;
+                    &:hover {
+                        background: rgba(255, 255, 255, .2);
+                    }
+                }
+            }
+        }
+    }
+
+    .chart-hover-point {
+        
+        color: rgba(255, 255, 255, .8);
+        font-size: 12px;
+        display: block;
+        padding-left: 10px;
+        z-index: 1;
+        line-height: 30px;
+        height: 30px;
+        white-space: nowrap; 
+        overflow: hidden; 
+        text-overflow: ellipsis;
+        font-family: AtlasTypewriter;
+        font-size: 11px;
+        border-bottom: 1px solid rgba(255, 255, 255, .05);
+        width: 100%;
+
+        span {
+            padding-right: 10px;
+        }
+    }
+
+    .chart-container {
+        height: e('calc(100% - 62px)');
+        font-family: AtlasTypewriter;
+        font-size: 11px;
+    }
+
+    .chart-loading { 
+        top: 0;
+        height: 100%;
+    }
+
+}
+
+.chart-depth {
+
+    height: 100%;
+
+    .depth-container {
+        height: 100%;
+    }
+
+    .aggregation {
+
+        height: 60px;
+        width: 100%;
+        border-top: 1px solid @darkBlackColor;
+        color: #fff;
+        font-size: 12px;
+        position: absolute;
+        z-index: 2;
+        padding: 15px;
+
+        .operation {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .description {
+            text-align: center;
+            opacity: .5;
+            line-height: 30px;
+        }
+        span.price {
+            font-size: 17px;
+            font-weight: bold;
+            padding: 0 10px;
+        }
+        button {
+            border: 0;
+            background: transparent;
+            display: inline-block;
+            vertical-align: middle;
+            padding: 0;
+            outline: none;
+            width: 24px;
+            height: 24px;
+            &:disabled {
+                opacity: .4;
+            }
+        }
+    }
+
+    .chart-loading { 
+        top: 0;
+        height: 100%;
+    }
+
+}
+
+.chart-tradingview {
+
+    height: 100%;
+
+    .chart-container {
+        height: 100%;
+    }
+
+    .chart-loading { 
+        top: 0;
+        height: 100%;
+    }
+
+}

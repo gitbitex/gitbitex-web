@@ -1,0 +1,25 @@
+div.page.page-account.page-account-sign
+    header-navbar
+    div.container
+        h2.header Forgot your password?
+        div.account-form
+            div.form.form-horizontal
+                div.form-group
+                    label.control-label.col-xs-3 Email
+                    div.col-xs-9
+                        input.form-control(type="email", placeholder="you@example.com", v-model='account.email')
+                div(v-show='codeIsSend')
+                    p.success-tip We sent verification code to your email, and enter the verification code
+                    div.form-group
+                        label.control-label.col-xs-3 Verify Code
+                        div.col-xs-9
+                            input.form-control(type="text", placeholder="enter the verification code", v-model='account.verifyCode')
+                    div.form-group
+                        label.control-label.col-xs-3 Password
+                        div.col-xs-9
+                            input.form-control(type="password", placeholder="enter the new password", v-model='account.newPassword')
+                div.form-group.submit
+                    p.error {{error}}
+                    button.btn.btn-primary.btn-block.btn-lg(@click='submit') RESET PASSWORD
+                        
+    

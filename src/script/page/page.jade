@@ -1,0 +1,5 @@
+div.page
+    div.page-container(v-if='!page.loading && !page.error') @template@
+    div.modal(:class="{active: modal.active}")
+        div.modal-content(ref='modalContent')
+            div(:is='modal.component', @close='modal.close', :data='modal.data')

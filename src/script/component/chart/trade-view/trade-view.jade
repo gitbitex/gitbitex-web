@@ -1,0 +1,11 @@
+div.chart.panel.chart-trade-view
+
+    h2 PRICE CHART
+        span.pannel-tabbar
+            a(@click='switchPrice', :class='{active: tabIndex==0}') Price Chart
+            a(@click='switchDepth', :class='{active: tabIndex==1}') Depth Chart
+    div.kline(:class="{'chart-active': tabIndex==0}")
+        chart-candle(:productId='productId')
+    div.depth(:class="{'chart-active': tabIndex==1}")
+        chart-depth(:productId='productId')
+        

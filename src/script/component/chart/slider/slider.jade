@@ -1,0 +1,11 @@
+div.chart-slider
+    div.slider-inner(:style="'width: ' +products.length*270+ 'px'")
+        div.slide(v-for='product in products')
+            div.left
+                label {{product.baseCurrency}}/{{product.quoteCurrency}} 
+                span(:class="{'red': product.rate24h < 0}")
+                    | {{product.rate24h>0?'+':''}}{{product.rate24h}}%
+                b {{product.price}} 
+                    small   {{product.quoteCurrency}}
+            div.right
+                img(:src='`/api/products/${product.id}/svg`')

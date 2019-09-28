@@ -1,0 +1,26 @@
+div.page.page-account.page-account-sign
+    header-navbar
+    div.container
+        h2.header Sign in to 
+            b GITBITEX
+        div.account-form
+            p.success-tip(v-if='alert') {{alert}}
+            div.form.form-horizontal
+                div.form-group
+                    label.control-label.col-xs-3 Email
+                    div.col-xs-9
+                        input.form-control(type="email", placeholder="you@example.com", disabled, ref='inputEmail', v-model='account.email')
+                div.form-group
+                    label.control-label.col-xs-3 Password
+                    div.col-xs-9
+                        input.form-control(type="password", placeholder="Minimum 8 characters", disabled, ref='inputPassword', v-model='account.password')
+                
+                div.form-group.submit
+                    p.error {{error}}
+                    button.btn.btn-primary.btn-block.btn-lg(@click='submit') SIGN IN
+                    p.m-t-10.text-center
+                        router-link(to='forgot') Forgot password?
+                        |  
+                        router-link(to='signup') Don't have an account? 
+                        
+    

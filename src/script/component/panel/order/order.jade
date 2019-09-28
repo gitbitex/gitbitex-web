@@ -1,0 +1,10 @@
+div.panel.panel-order
+    h2 OPEN ORDERS
+        button(v-show='cancelAllBtnEnable', @click='cancelAll') cancel all
+    div.panel-loading(v-if='loading')
+        span.loading-spinner
+    div.order-list
+        panel-order-list(:orders='openOrders', :product='object.product')
+    
+        
+

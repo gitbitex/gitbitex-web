@@ -1,0 +1,8 @@
+div.v-select(:class="{'search': search}")
+    div.value(@click.stop='dropDown')
+        input(v-model='selectValue')
+        div.clear(@click='clear', v-show='selectValue && search') ✕
+        div.arrow-w(:class='{active: showDropdown}')
+            span.arrow
+    div.select-dropdown(v-show='showDropdown')
+        span(v-for='(opt, index) in filterOptions', @click='selectOpt(opt, index)') {{opt}}
