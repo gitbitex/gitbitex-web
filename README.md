@@ -39,6 +39,9 @@ apiProxy = 'https://gitbitex.com:8080/';
 static SOCKET_SERVER = 'wss://gitbitex.com:8080/ws';
 ```
 
-## Problems?
-Please let me know if you have any problems. You can submit an issue or send me an email 
+## Questions?
+Please let me know if you have any questions. You can submit an issue or send me an email 
 (liyongsheng@me.com)
+
+## Contributing
+This project welcomes contributions and suggestions and we are excited to work with the power user community to build the best exchange in the world
