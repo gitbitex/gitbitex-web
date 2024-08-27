@@ -37,7 +37,7 @@
     "ts-loader": "^4.4.2",
     "typescript": "^2.9.2",
     "typescript-lit-html-plugin": "0.0.2",
-    "webpack": "3.10.0"
+    "webpack": "5.94.0"
   },
   "dependencies": {
     "axios": "^0.19.0",
